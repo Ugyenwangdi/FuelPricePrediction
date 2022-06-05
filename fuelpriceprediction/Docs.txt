@@ -1,3 +1,7 @@
+Prediction of Bhutan's fuel prices from 2020-01-15[year, month, day] to 2022-04-01 	
+
+
+
 $ py -3 -m venv env
 
 $ .\env\Scripts\activate
@@ -42,7 +46,7 @@ In the Procfile: housepriceprediction is a projectname
 
 runtime.txt:
 ** python-3.9.11 ** 
-Check the supported version in https://devcenter.heroku.com/
+Check the supported version in https://devcenter.heroku.com/articles/python-support#specifying-a-python-version
 
 # In the settings.py :
 

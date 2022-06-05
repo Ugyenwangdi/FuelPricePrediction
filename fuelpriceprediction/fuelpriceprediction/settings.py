@@ -24,10 +24,8 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
 SECRET_KEY = 'django-insecure-ux94zl0r+8kca_+x9hmja)zvt-0&r!u%sw1&)_nq3cs9#en=&k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
+DEBUG = False
+ALLOWED_HOSTS = ['fuelpriceprediction.herokuapp.com', 'localhost', '127.0.0.1'] 
 
 # Application definition
 

@@ -1,0 +1,1 @@
+web: gunicorn fuelpriceprediction.wsgi —log-file -
