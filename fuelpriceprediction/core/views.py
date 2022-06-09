@@ -5,11 +5,22 @@ import joblib
 import numpy as np
 import pandas as pd
 
+import pyttsx3
+
+prediction = 0
+
+# engine = pyttsx3.init()  
+# voices = engine.getProperty('voices')  # Get all the voices
+# engine.setProperty('voice', voices[1].id)  # set it to second voice
+# engine.say('Welcome! Predict the fuel prices of Bhutan. Fill the inputs fields and click on the predict button.')  # ask it to say the command
+# engine.runAndWait()
+# engine.stop()
 
 model = joblib.load('model/model.pkl', "rb")
 
 
-def index(request):
+def home(request):
+    
     return render(request,'index.html')
 
 def predict(request):
@@ -21,11 +32,24 @@ def predict(request):
         station = [request.POST.get('station')][0]
         nosrm = [request.POST.get('rminput')][0]
         
+        engine = pyttsx3.init()  
+        voices = engine.getProperty('voices')  # Get all the voices
+        engine.setProperty('voice', voices[1].id)  # set it to second voice
+        engine.say('Predicting the price on your input.')  # ask it to say the command
+        engine.runAndWait()
+        engine.stop()
+        
         
         if region == "" or product == "" or company == "" or dateinput == "" or station == "":
             context = {'error': 'Please fill the input fields'}
             
             print("Please fill the input fields")
+            engine = pyttsx3.init()  
+            voices = engine.getProperty('voices')  # Get all the voices
+            engine.setProperty('voice', voices[1].id)  # set it to second voice
+            engine.say('Please fill the input fields.')  # ask it to say the command
+            engine.runAndWait()
+            engine.stop()
             return render(request, 'index.html', context)
         
         else:
@@ -77,10 +101,28 @@ def predict(request):
             prediction = format(prediction[0], '.3f')  # format to 3 decimals
 
             context = {'result': prediction, 'input': x}
-            return render(request,'result.html',context)
+            
+           
+            
+            
+            
+            # return render(request,'result.html',context)
         
     except:
         context = {'error': 'Something went wrong. Please try again by filling the input fields'}
+        # engine = pyttsx3.init()  
+        # voices = engine.getProperty('voices')  # Get all the voices
+        # engine.setProperty('voice', voices[1].id)  # set it to second voice
+        # engine.say('Something went wrong. Please try again by giving the correct inputs. ') # ask it to say the command
+        # engine.runAndWait()
+        # engine.stop()
         return render(request, 'index.html', context)
 
-    # return render(request,'result.html',context)
+    engine = pyttsx3.init()  
+    voices = engine.getProperty('voices')  # Get all the voices
+    engine.setProperty('voice', voices[1].id)  # set it to second voice
+    engine.say('Showing the predicted price... ') # ask it to say the command
+    engine.runAndWait()
+    engine.stop()
+    
+    return render(request,'index.html',context)

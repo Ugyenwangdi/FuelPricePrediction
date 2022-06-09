@@ -12,6 +12,7 @@ $ pip install sklearn
 
 $ pip install joblib
 
+$ pip install pyttsx3
 
 $ django-admin startproject fuelpriceprediction
 
