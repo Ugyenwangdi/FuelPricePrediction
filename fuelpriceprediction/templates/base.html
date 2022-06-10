@@ -21,7 +21,7 @@
     <header class="header-area">
         <div class="header-container">
             <div class="site-logo">
-                <a href="/">BF<span>PP</span></a>
+                <a href="/">PF<span>P</span></a>
             </div>
             <div class="mobile-nav">
                 <i class="fas fa-bars"></i>
@@ -29,6 +29,7 @@
             <div class="site-nav-menu">
                 <ul class="primary-menu">
                   <li><a href="/" data-after="Home">Home</a></li>
+                  <li><a href="{% url 'core:dashboard' %}" data-after="Home">Dashboard</a></li>
                   <li><a href="#about" data-after="About">About Us</a></li>
                   <li><a href="#contact" data-after="Contact">Contact</a></li>
                 </ul>
@@ -37,27 +38,40 @@
     </header>
   </section>
   <!-- End Header -->
-  <section id = "upload" style="background-color: white;">
+  <section id = "upload" >
     <div class="predict" style="margin-top: 40px;">
-      
+      <h2 class="head">Prediction of Fuel(petrol, diesel) Price</h2>
 
-      {% block content %}
-      {% endblock %}
-      
-    </div>
+      <br><br>
+
+      <div style="text-align: center; " >
+      <h3>Gyelpozhing (Approved Date: 2022-04-01 )</h3>
+
+      <p style="text-align: center; "><strong>Petrol:</strong> Nu.94.62</p>
+      <p style="text-align: center;"><strong>Diesel:</strong> Nu.101.69</p>
+      <br>
+      {% comment %} <h3>Mongar (Approved Date: 2022-04-01 )</h3>
+      <p style="text-align: center; color: white;"><strong>Petrol:</strong> Nu.96.10</p>
+      <p style="text-align: center; color: white;"><strong>Diesel:</strong> Nu.101.82</p></div> {% endcomment %}
+
+            {% block content %}
+            {% endblock %}
+            
+          </div>
   </section>
   <section id="about" class="about">
      <div class="container1">
          <div class="row1">
              <div class="section-title">
                  <h1>About<span>Us</span></h1>
-                 <p>Meet the project team</p>
+                 <small><p>A project that was aimed to predict the fuel prices of Bhutan using machine learning.</p></small>
+                 <p><strong>Meet the project team</strong></p>
              </div>
          </div>
          <div class="row1">
              <div class="team-items">
                   <div class="item1">
-                      <img src="{% static 'img/01.jpg' %}" alt="team" style="border-radius: 50%; width: 300px; height: 300px; margin-left: 17px;" />
+                      <img src="{% static 'img/01.jpg' %}" alt="team" style="border-radius: 50%; width: 300px; height: 300px;" />
                       <div class="inner">
                           <div class="info">
                                <h5>Ugyen Wangdi</h5>
@@ -72,7 +86,7 @@
                       </div>
                   </div>
                   <div class="item1">
-                      <img src="{% static 'img/02.JPG' %}" alt="team" style="border-radius: 50%; width: 300px; height: 300px; margin-left: 17px;"/>
+                      <img src="{% static 'img/02.JPG' %}" alt="team" style="border-radius: 50%; width: 300px; height: 300px; "/>
                       <div class="inner">
                           <div class="info">
                                <h5>Gyeltshen Wangdi</h5>
@@ -87,7 +101,7 @@
                       </div>
                   </div>
                   <div class="item1">
-                      <img src="{% static 'img/03.JPG' %}" alt="team" style="border-radius: 50%; width: 300px; height: 300px; margin-left: 17px;"/>
+                      <img src="{% static 'img/03.jpg' %}" alt="team" style="border-radius: 50%; width: 300px; height: 300px;"/>
                       <div class="inner">
                           <div class="info">
                                <h5>Galey Wangmo</h5>
@@ -102,7 +116,7 @@
                       </div>
                   </div>
                   <div class="item1">
-                      <img src="{% static 'img/04.jpg' %}" alt="team" style="border-radius: 50%; width: 300px; height: 300px; margin-left: 17px;"/>
+                      <img src="{% static 'img/04.jpg' %}" alt="team" style="border-radius: 50%; width: 300px; height: 300px;"/>
                       <div class="inner">
                           <div class="info">
                                <h5>Tshering Dorji</h5>
@@ -163,7 +177,7 @@
   <section id="footer">
     <div class="footer container">
       <div class="brand">
-        <h1><span>Bhutans' Fuel </span>Price Prediction</h1>
+        <h1><span>Prediction of </span>Fuel(petrol, diesel) Price</h1>
       </div>
       <h2>Know the Fuel Prices of Bhutan</h2>
       <div class="social-icon">
@@ -172,6 +186,9 @@
         </div>
         <div class="social-item">
           <a href="https://www.instagram.com" target='_blank'><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="https://gitlab.com/p7521/fuelpriceprediction-bhutan" target='_blank'><img src="https://img.icons8.com/color/48/undefined/gitlab.png"/></a>
         </div>
       </div>
       <p>© 2022 Group 12. All rights reserved</p>

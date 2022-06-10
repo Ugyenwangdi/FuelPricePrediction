@@ -1,0 +1,12 @@
+{%  extends 'dashbase.html' %}
+{% load static %}
+{% block content %}
+    {% load plotly_dash %}
+{% comment %} <h1>Welcome</h1> {% endcomment %}
+
+    <div class="{% plotly_class name='Piechart' %} card" style="height: 100%; width: 100%">
+    {% plotly_app name='Piechart' ratio=0.45 %}
+    </div> 
+
+
+{% endblock %}

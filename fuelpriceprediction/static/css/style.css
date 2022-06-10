@@ -275,7 +275,7 @@ section#hero-section {
 
 .about .team-items .item1 {
     flex-basis: calc(25% - 45px);
-    max-width: calc(80% - 105px);
+    max-width: calc(80% - 115px);
     transition: all .5s ease;
     margin-bottom: 100px;
 }
@@ -348,15 +348,15 @@ section#hero-section {
 
 /*responsive*/
 
-@media(max-width: 991px) {
-    .team-section .team-items .item1 {
+@media(max-width: 100%) {
+    .about .team-items .item1 {
         flex-basis: calc(50% - 30px);
         max-width: calc(50% - 30px);
     }
 }
 
-@media(max-width: 767px) {
-    .team-section .team-items .item1 {
+@media(max-width: 100%) {
+    .about .team-items .item1 {
         flex-basis: calc(100%);
         max-width: calc(100%);
     }

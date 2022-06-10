@@ -1,0 +1,14 @@
+{%  extends 'dashbase.html' %}
+{% load static %}
+{% block content %}
+    {% load plotly_dash %}
+{% comment %} <h1 style="text-align:center">Welcome </h1> {% endcomment %}
+
+
+    <div class="{% plotly_class name='SimpleExample' %} card" style="height: 100%; width: 100%">
+    {% plotly_app name='SimpleExample' ratio=0.45 %}
+    </div>
+<br>
+    {% comment %} {{ plot1 | safe }} {% endcomment %}
+
+{% endblock %}

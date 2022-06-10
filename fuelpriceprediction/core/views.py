@@ -5,7 +5,11 @@ import joblib
 import numpy as np
 import pandas as pd
 
-import pyttsx3
+
+from plotly.offline import plot
+import plotly.graph_objects as go
+
+# import pyttsx3
 
 prediction = 0
 
@@ -32,24 +36,24 @@ def predict(request):
         station = [request.POST.get('station')][0]
         nosrm = [request.POST.get('rminput')][0]
         
-        engine = pyttsx3.init()  
-        voices = engine.getProperty('voices')  # Get all the voices
-        engine.setProperty('voice', voices[1].id)  # set it to second voice
-        engine.say('Predicting the price on your input.')  # ask it to say the command
-        engine.runAndWait()
-        engine.stop()
+        # engine = pyttsx3.init()  
+        # voices = engine.getProperty('voices')  # Get all the voices
+        # engine.setProperty('voice', voices[1].id)  # set it to second voice
+        # engine.say('Predicting the price on your input.')  # ask it to say the command
+        # engine.runAndWait()
+        # engine.stop()
         
         
         if region == "" or product == "" or company == "" or dateinput == "" or station == "":
             context = {'error': 'Please fill the input fields'}
             
-            print("Please fill the input fields")
-            engine = pyttsx3.init()  
-            voices = engine.getProperty('voices')  # Get all the voices
-            engine.setProperty('voice', voices[1].id)  # set it to second voice
-            engine.say('Please fill the input fields.')  # ask it to say the command
-            engine.runAndWait()
-            engine.stop()
+            # print("Please fill the input fields")
+            # engine = pyttsx3.init()  
+            # voices = engine.getProperty('voices')  # Get all the voices
+            # engine.setProperty('voice', voices[1].id)  # set it to second voice
+            # engine.say('Please fill the input fields.')  # ask it to say the command
+            # engine.runAndWait()
+            # engine.stop()
             return render(request, 'index.html', context)
         
         else:
@@ -109,7 +113,7 @@ def predict(request):
             # return render(request,'result.html',context)
         
     except:
-        context = {'error': 'Something went wrong. Please try again by filling the input fields'}
+        # context = {'error': 'Something went wrong. Please try again by filling the input fields'}
         # engine = pyttsx3.init()  
         # voices = engine.getProperty('voices')  # Get all the voices
         # engine.setProperty('voice', voices[1].id)  # set it to second voice
@@ -118,11 +122,60 @@ def predict(request):
         # engine.stop()
         return render(request, 'index.html', context)
 
-    engine = pyttsx3.init()  
-    voices = engine.getProperty('voices')  # Get all the voices
-    engine.setProperty('voice', voices[1].id)  # set it to second voice
-    engine.say('Showing the predicted price... ') # ask it to say the command
-    engine.runAndWait()
-    engine.stop()
+    # engine = pyttsx3.init()  
+    # voices = engine.getProperty('voices')  # Get all the voices
+    # engine.setProperty('voice', voices[1].id)  # set it to second voice
+    # engine.say('Showing the predicted price... ') # ask it to say the command
+    # engine.runAndWait()
+    # engine.stop()
     
     return render(request,'index.html',context)
+
+
+def dashboard(request):
+    # def scatter():
+    #     x1 = [1,2,3,4]
+    #     y1 = [30, 35, 25, 45]
+
+    #     trace = go.Scatter(
+    #         x = x1,
+    #         y = y1
+    #     )
+    #     layout = dict(
+    #         title='Simple Graph',
+    #         xaxis=dict(range=[min(x1), max(x1)]),
+    #         yaxis = dict(range=[min(y1), max(y1)])
+    #     )
+
+    #     fig = go.Figure(data=[trace], layout=layout)
+    #     plot_div = plot(fig, output_type='div', include_plotlyjs=False)
+    #     return plot_div
+
+    # context ={
+    #     'plot1': scatter()
+    # }
+
+    return render(request, 'core/welcome.html')
+
+
+def bar(request):
+    
+
+    return render(request, 'core/barchart.html')
+
+def pie(request):
+    
+
+    return render(request, 'core/piechart.html')
+
+
+def line(request):    
+
+    return render(request, 'core/linechart.html')
+
+
+def box(request):    
+
+    return render(request, 'core/boxplot.html')
+
+
