@@ -46,7 +46,7 @@ IOS, Windows, Linux...)
 - Dashboard for Bhutans' Fuel Prices
 
 
-## Installation of project 
+<!-- ## Installation of project 
 
 To install our project on your system:
 
@@ -59,7 +59,7 @@ $ python -m venv env
 $ env\Scripts\activate
 $ pip install -r requirements.txt
 $ python manage.py runserver
-```
+``` -->
 
 Team 12:
 - Galey Wangmo (12190051)
