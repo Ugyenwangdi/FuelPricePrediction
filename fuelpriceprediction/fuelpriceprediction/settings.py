@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
+    'fuelpriceprediction.core',
     'django_plotly_dash.apps.DjangoPlotlyDashConfig',
     'channels',
 ]
